@@ -23,7 +23,7 @@ export async function POST(req: Request) {
     const apiKey = process.env.ANTHROPIC_API_KEY;
 
     const anthropic = new Anthropic({ apiKey });
-    const mime = file.type || "image/jpeg";
+    const mime = "image/jpeg";
 
     const uploaded = await anthropic.beta.files.upload(
       {
