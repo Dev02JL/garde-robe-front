@@ -23,11 +23,21 @@ export async function POST(req: Request) {
     const apiKey = process.env.ANTHROPIC_API_KEY;
 
     const anthropic = new Anthropic({ apiKey });
-    const mime = "image/jpeg";
+    const clientMime = (file.type || "").trim();
+    const mimeMap = {
+      ".jpg": "image/jpeg",
+      ".jpeg": "image/jpeg",
+      ".png": "image/png",
+      ".webp": "image/webp",
+      ".gif": "image/gif",
+    } as const;
+    const mime = clientMime || mimeMap[ext as keyof typeof mimeMap] || "image/jpeg";
 
     const uploaded = await anthropic.beta.files.upload(
       {
-        file: await toFile(new Blob([bytes], { type: mime }), filename),
+        file: await toFile(new Blob([bytes], { type: mime }), filename, {
+          type: mime,
+        }),
       },
       {
         headers: { "anthropic-beta": "files-api-2025-04-14" },
