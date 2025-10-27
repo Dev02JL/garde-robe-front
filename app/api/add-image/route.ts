@@ -37,8 +37,12 @@ export async function POST(req: Request) {
     const fileId = (uploaded as any).id!;
 
     const clothe: Clothe = { fileId, imagePath: publicPath };
-    await fs.appendFile(path.join(process.cwd(), "data/fileList.json"), JSON.stringify(clothe) + "\n");
-
+    const listPath = path.join(process.cwd(), "data/fileList.json");
+    const prev = await fs.readFile(listPath, "utf8").catch(() => "[]");
+    const arr = JSON.parse(prev) as Clothe[];
+    arr.push(clothe);
+    await fs.writeFile(listPath, JSON.stringify(arr, null, 2));
+    
     return NextResponse.json(clothe, { status: 201 });
   } catch (error) {
     return NextResponse.json(
