@@ -1,10 +1,34 @@
 [
   {
-    "fileId": "file_011CUXsXpzVgm3dFTYNqJKTv",
+    "fileId": "file_011CUXtmhjS8eCBcgVqVU6PZ",
+    "imagePath": "/images/pull_rose-claude.jpg"
+  },
+  {
+    "fileId": "file_011CUXuiw3BDotiuiNU43piW",
     "imagePath": "/images/pull_vert-claude.jpg"
   },
   {
-    "fileId": "file_011CUXtmhjS8eCBcgVqVU6PZ",
-    "imagePath": "/images/pull_rose-claude.jpg"
+    "fileId": "file_011CUXujWTb5KsuJBF5gZhpj",
+    "imagePath": "/images/jean-claude.jpg"
+  },
+  {
+    "fileId": "file_011CUXujiqibpVaeNZb7xep5",
+    "imagePath": "/images/jean2-claude.jpg"
+  },
+  {
+    "fileId": "file_011CUXumaN3zuWTR42tggiiJ",
+    "imagePath": "/images/robe_soiree-claude.jpg"
+  },
+  {
+    "fileId": "file_011CUXunbjfhGv8gzpxTukZh",
+    "imagePath": "/images/robe_longue_soiree-claude.jpg"
+  },
+  {
+    "fileId": "file_011CUXup3n7XnCasEeiGFgbM",
+    "imagePath": "/images/jupe_jean-claude.jpg"
+  },
+  {
+    "fileId": "file_011CUXupvvtKg4wN49sdAkpi",
+    "imagePath": "/images/debardeur_blanc-claude.jpg"
   }
 ]

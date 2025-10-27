@@ -15,7 +15,7 @@ export default function ImagesCarousel({ images }: { images: string[] }) {
         {images.map((src) => (
           <CarouselItem key={src} className="pl-3 md:basis-1/3 lg:basis-1/4">
             <div className="p-1">
-              <Card className="rounded-xl border shadow-md transition hover:shadow-lg">
+              <Card className="rounded-xl border-0 shadow-md transition hover:shadow-lg">
                 <CardContent className="flex h-80 items-center justify-center p-3">
                   <Image
                     src={src}
