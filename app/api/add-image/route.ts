@@ -37,6 +37,8 @@ export async function POST(req: Request) {
     const fileId = (uploaded as any).id!;
 
     const clothe: Clothe = { fileId, imagePath: publicPath };
+    await fs.appendFile(path.join(process.cwd(), "data/fileList.json"), JSON.stringify(clothe) + "\n");
+
     return NextResponse.json(clothe, { status: 201 });
   } catch (error) {
     return NextResponse.json(
