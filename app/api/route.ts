@@ -3,7 +3,6 @@ import path from "node:path";
 import fs from "node:fs/promises";
 import Anthropic, { toFile } from "@anthropic-ai/sdk";
 import { type Clothe } from "@/types/clothe";
-import { randomUUID } from "node:crypto";
 
 export const runtime = "nodejs";
 
@@ -16,7 +15,8 @@ export async function POST(req: Request) {
     const imagesDir = path.join(process.cwd(), "public", "images");
 
     const ext = path.extname(file.name || "").toLowerCase() || ".jpg";
-    const filename = `${randomUUID()}${ext}`;
+    const base = path.basename(file.name, ext);
+    const filename = `${base}-claude${ext}`;
     await fs.writeFile(path.join(imagesDir, filename), bytes);
     const publicPath = `/images/${filename}`;
 
