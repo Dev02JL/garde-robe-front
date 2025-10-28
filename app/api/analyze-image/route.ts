@@ -38,7 +38,7 @@ export async function POST(req: Request) {
         {
           role: "user",
           content: [
-            { type: "text", text: "Décris précisément ce vêtement pour une fiche produit." },
+            { type: "text", text: "Décris factuellement ce vêtement en quelque mots. Exemple : débardeur noir, gothique, été, léger." },
             { type: "image", source: { type: "base64", media_type: mime, data: b64 } },
           ],
         },
