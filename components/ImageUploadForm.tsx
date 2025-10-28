@@ -20,8 +20,10 @@ export default function ImageUploadForm({ onUploaded }: { onUploaded?: (imagePat
     }
     setSubmitting(true);
     try {
-      const results = await Promise.allSettled(
-        files.map(async (f) => {
+      let okCount = 0;
+      let koCount = 0;
+      for (const f of files) {
+        try {
           const form = new FormData();
           form.append("image", f);
           const res = await fetch("/api/add-image", { method: "POST", body: form });
@@ -30,13 +32,26 @@ export default function ImageUploadForm({ onUploaded }: { onUploaded?: (imagePat
             throw new Error((data && data.error) || `HTTP ${res.status}`);
           }
           const imagePath = data?.imagePath as string | undefined;
+          const fileId = data?.fileId as string | undefined;
           if (imagePath && onUploaded) onUploaded(imagePath);
-          return imagePath;
-        })
-      );
-      const okCount = results.filter((r) => r.status === "fulfilled").length;
-      const koCount = results.length - okCount;
-      setSummary(`${okCount} ajoutée(s), ${koCount} échouée(s)`);
+          if (fileId) {
+            try {
+              await fetch("/api/analyze-image", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ fileId }),
+              });
+            } catch {}
+          }
+          okCount++;
+        } catch {
+          koCount++;
+        }
+      }
+      const results = { okCount, koCount };
+      const okCountFinal = results.okCount;
+      const koCountFinal = results.koCount;
+      setSummary(`${okCountFinal} ajoutée(s), ${koCountFinal} échouée(s)`);
       setFiles([]);
       if (inputRef.current) inputRef.current.value = "";
     } catch (err: any) {
