@@ -8,10 +8,12 @@ import Autoplay from "embla-carousel-autoplay";
 export default function ImagesCarousel({ images }: { images: string[] }) {
   return (
     <Carousel
-      className="w-full max-w-5xl"
+      className="mx-auto w-full max-w-5xl"
+      opts={{ align: "center" }}
       plugins={[Autoplay({ delay: 2500, stopOnInteraction: false })]}
     >
-      <CarouselContent className="-ml-3">
+      <CarouselContent className="-ml-3"
+      >
         {images.map((src) => (
           <CarouselItem key={src} className="pl-3 md:basis-1/3 lg:basis-1/4">
             <div className="p-1">

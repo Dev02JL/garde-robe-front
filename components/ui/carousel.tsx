@@ -13,7 +13,7 @@ type CarouselProps = React.PropsWithChildren<{
 }>;
 
 export function Carousel({ className, opts, plugins, children }: CarouselProps) {
-  const [emblaRef] = useEmblaCarousel({ loop: true, align: "start", ...(opts || {}) }, plugins);
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: "center", ...(opts || {}) }, plugins);
 
   return (
     <div className={cn("relative", className)}>

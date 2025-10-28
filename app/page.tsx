@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import ImagesCarousel from "@/components/ImagesCarousel";
+import GalleryClient from "@/components/GalleryClient";
 
 export default async function Home() {
   const imagesDir = path.join(process.cwd(), "public", "images");
@@ -11,8 +12,8 @@ export default async function Home() {
 
   return (
     <div>
-      <main className="flex min-h-screen items-center justify-center p-6">
-        <ImagesCarousel images={images} />
+      <main className="flex flex-col items-center justify-start gap-6 p-6">
+        <GalleryClient initialImages={images} />
       </main>
     </div>
   );
