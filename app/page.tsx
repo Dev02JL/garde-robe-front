@@ -1,7 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import ImagesCarousel from "@/components/ImagesCarousel";
 import GalleryClient from "@/components/GalleryClient";
+import UserInputForm from "@/components/UserInputForm";
+import PromptResults from "@/components/PromptResults";
 
 export default async function Home() {
   const imagesDir = path.join(process.cwd(), "public", "images");
@@ -14,6 +15,8 @@ export default async function Home() {
     <div>
       <main className="flex flex-col items-center justify-start gap-6 p-6">
         <GalleryClient initialImages={images} />
+        {/* <UserInputForm /> */}
+        <PromptResults />
       </main>
     </div>
   );
