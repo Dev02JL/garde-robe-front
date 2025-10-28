@@ -28,9 +28,9 @@ const PromptResults = () => {
   return (
     <div className="flex w-full flex-col items-center gap-4">
       <UserInputForm onDataReceived={handleDataFromChild} />
+      {explanation && <p className="w-full max-w-4xl">{explanation}</p>}
       {imagePaths.length > 0 && (
         <>
-          <p>{explanation}</p>
           <div className="w-full max-w-4xl space-y-4">
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
               {imagePaths.map((path, index) => (

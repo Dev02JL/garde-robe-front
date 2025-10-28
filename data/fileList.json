@@ -1,10 +1,5 @@
 [
   {
-    "fileId": "file_011CUZp9NZZgJZQ4QdKYAScc",
-    "imagePath": "/images/baskets_blanches-claude.jpg",
-    "description": "Sneakers beige, rétro-sportives, maille technique et cuir, détails gris argenté, semelle chunky, casual, printemps-été"
-  },
-  {
     "fileId": "file_011CUZp9aW9nbPagmhEz3zpy",
     "imagePath": "/images/baskets_plateforme_blanches-claude.jpg",
     "description": "Sneakers plateforme blanches, style chunky, lacets perlés décoratifs, semelle très épaisse sculptée, inspiration streetwear Y2K."
@@ -14,11 +9,7 @@
     "imagePath": "/images/body_manches_noir-claude.jpg",
     "description": "Body noir à manches longues, col montant, coupe ajustée, style minimaliste, polyvalent, toutes saisons."
   },
-  {
-    "fileId": "file_011CUZp9z4VGbTwJKR2hup2i",
-    "imagePath": "/images/bottes_talons_noires-claude.jpg",
-    "description": "Bottes hautes vernies noires, talon carré épais, plateforme légère, style rétro années 70, automne-hiver, sophistiquées."
-  },
+
   {
     "fileId": "file_011CUZpACTd61SH7jhHym8NU",
     "imagePath": "/images/bottines_talons_noir-claude.jpg",
@@ -58,6 +49,11 @@
     "fileId": "file_011CUZpBdsro5AG3z29rKwVL",
     "imagePath": "/images/jupe_maxi_boho_rose-claude.jpg",
     "description": "Jupe longue rose pâle, bohème, volantée, taille élastique, coton léger, printemps-été, fluide."
+  },
+  {
+    "fileId": "file_011CUZp9NZZgJZQ4QdKYAScc",
+    "imagePath": "/images/baskets_blanches-claude.jpg",
+    "description": "Sneakers beige, rétro-sportives, maille technique et cuir, détails gris argenté, semelle chunky, casual, printemps-été"
   },
   {
     "fileId": "file_011CUZpBpwNkj4cXAY7NphsR",
@@ -128,5 +124,10 @@
     "fileId": "file_011CUZpKddwsUaLWA8Zk7Gor",
     "imagePath": "/images/08951588250-p-claude.jpg",
     "description": "Chaussettes blanches, côtelées, mi-mollet, basiques, coton, toutes saisons, style sportif/académique."
+  },
+  {
+    "fileId": "file_011CUZp9z4VGbTwJKR2hup2i",
+    "imagePath": "/images/bottes_talons_noires-claude.jpg",
+    "description": "Bottes hautes vernies noires, talon carré épais, plateforme légère, style rétro années 70, automne-hiver, sophistiquées."
   }
 ]

@@ -22,38 +22,33 @@ export async function POST(req: Request) {
           {
             type: "text",
             text: `${formData.get("message") as string}
-            Voici l'inventaire complet de la garde-robe au format JSON :
+            
 
-            \`\`\`json
-            ${JSON.stringify(fileList, null, 2)}
-            \`\`\`
+            Règles strictes :
+            1. Tu ne traites que des demandes de tenue.
+            2. Une tenue doit avoir **au moins un haut et un bas**, sauf si une **robe** est sélectionnée, auquel cas elle remplace à la fois le haut et le bas.
+            3. Les manteaux ne remplacent pas le haut, le bas ou la robe.
+            4. **Sélectionne un seul article par catégorie** : couvre-chef, robe, haut, bas, manteau, chaussures, accessoires.
+            5. Pas de doublons dans une catégorie.
+            6. Les articles doivent être listés **de la tête aux pieds**.
+            7. Si une robe est choisie, ne sélectionne **ni haut ni bas**.
+            8. Le nombre de file_id doit correspondre exactement au nombre d'articles cités dans l'explication dans la réponse.
 
-            Les images correspondantes sont affichées dans le même ordre que le tableau JSON ci-dessus.
-
-            Règles :
-            - Refuse toute autre demande qu'une demande de tenue.
-            - Si il y a un haut, il faut un bas et inversement.
-            - Si il y a un manteaux il faut un haut.
-            - Si on demande une robe, donne une robe.
-            - Renvoie un seul article de chaque catégorie.
-            - Donne les file_id dans l'ordre de la tête aux pieds.
-            - N'oublie pas les accessoires - manteaux si nécessaire, chaussures accessoires si présent dans la garde robe.
 
             Réponds UNIQUEMENT avec un objet JSON contenant un tableau "file_ids" avec les file_ids des images qui correspondent le mieux à ma demande.
 
             Format de réponse attendu :
             {
               "file_ids": ["file_id_1", "file_id_2", ...],
-              "explanation": "Brève explication du choix"
-            }`,
+              "explanation": "Très brève explication du choix"
+            } 
+              Voici l'inventaire complet de la garde-robe au format JSON :
+
+            \`\`\`json
+            ${JSON.stringify(fileList, null, 2)}
+            \`\`\`
+            `,
           },
-          ...files.map((fileId: string) => ({
-            type: "image" as const,
-            source: {
-              type: "file" as const,
-              file_id: fileId,
-            },
-          })),
         ],
       },
     ],
