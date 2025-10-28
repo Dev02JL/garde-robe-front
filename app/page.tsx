@@ -1,6 +1,5 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import ImagesCarousel from "@/components/ImagesCarousel";
 import GalleryClient from "@/components/GalleryClient";
 
 export default async function Home() {

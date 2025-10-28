@@ -22,7 +22,7 @@ export default function ImageUploadForm({ onUploaded }: { onUploaded?: (imagePat
     const form = new FormData();
     form.append("image", file);
     setSubmitting(true);
-    
+
     try {
       const res = await fetch("/api/add-image", {
         method: "POST",
@@ -54,7 +54,7 @@ export default function ImageUploadForm({ onUploaded }: { onUploaded?: (imagePat
           className="block w-full text-sm file:mr-3 file:rounded-md file:border-0 file:bg-secondary file:px-4 file:py-2 file:text-secondary-foreground"
         />
         <Button type="submit" disabled={!file || submitting}>
-          {submitting ? "Envoi…" : "Submit"}
+          {submitting ? "Envoi…" : "Ajouter"}
         </Button>
       </div>
       {error && <p className="mt-2 text-sm text-destructive">{error}</p>}
